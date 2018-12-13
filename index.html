@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pomodoro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="container">
+    <div id="input-box">
+      <input id="goal-input" type="text" placeholder="Enter your goal">
+      <input id="save-goal-btn" type="button" value="Save">
+    </div>
+    <div id="timer-box">
+      25:00
+    </div>
+    <div id="button-box">
+      <input id="start-btn" type="button" value="Start">
+      <input id="pause-btn" type="button" value="Pause">
+      <input id="restart-btn" type="button" value="Restart">
+    </div>
+    <div id="goal-list-box">
+      <ul id="goal-list">
+        <li>Example 1 <span class="successful">DONE</span></li>
+        <li>Example 2 <span class="unsuccessful">FAILED</span></li>
+      </ul>
+      <p id="success-rate">50%</p>
+    </div>
+    <div id="check-success-box">
+      <h2>Did you reach your goal?</h2>
+      <input id="yes-btn" type="button" value="Yes">
+      <input id="no-btn" type="button" value="No">
+    </div>
+  </div>
+
+  <script src="script.js" charset="utf-8"></script>
+</body>
+</html>
