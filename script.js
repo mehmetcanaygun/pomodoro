@@ -1,6 +1,8 @@
 var currentGoal;
 var inputBox = document.getElementById('input-box');
 var goalInput = document.getElementById('goal-input');
+var buttonBox = document.getElementById('button-box');
+var timerBox = document.getElementById('timer-box');
 var checkSuccessBox = document.getElementById('check-success-box');
 var question = document.getElementById('question');
 var goalList = document.getElementById('goal-list');
@@ -14,16 +16,17 @@ var successRate = 0;
 var isPaused = false;
 
 //Timer variables
-var minutes = 00;
-var seconds = 02;
+var minutes = 25;
+var seconds = 00;
 
 var saveGoalBtn = document.getElementById('save-goal-btn').onclick = function() {
   if(goalInput.value == "") {
     alert("Enter a goal!");
   } else {
     currentGoal = goalInput.value;
+    inputBox.style.display = "none";
+    buttonBox.style.display = "block";
   }
-  inputBox.style.display = "none";
 }
 
 var startBtn = document.getElementById('start-btn').onclick = function() {
@@ -57,6 +60,7 @@ function startCountdown() {
       minutes--;
     }
     seconds--;
+    timerBox.innerHTML = minutes + " : " + seconds;
     console.log(minutes + " : " + seconds);
   }
 }
@@ -76,14 +80,16 @@ var restartBtn = document.getElementById('restart-btn').onclick = function() {
   unsuccessfulPom = 0;
   successRate = 0;
   successRateLine.innerHTML = "";
+  buttonBox.style.display = "none";
+  timerBox.innerHTML = "";
 }
 
 function endPomodoro() {
   // 1 Pomodoro over, ask if it was successful or not
+  buttonBox.style.display = "none";
   checkSuccessBox.style.display = "block";
   question.innerHTML = "Did you reach your goal?<br>" +
                         "(" + currentGoal + ")";
-
 }
 
 var yesBtn = document.getElementById('yes-btn').onclick = function() {
@@ -111,8 +117,8 @@ function reset() {
   inputBox.style.display = "block";
   currentGoal = "";
   currentListItem = "";
-  minutes = 00;
-  seconds = 02;
+  minutes = 25;
+  seconds = 00;
   successRate = ((successfulPom/(successfulPom+unsuccessfulPom))*100).toFixed(2);
   successRateLine.innerHTML = successRate + "%";
   clearInterval(countdown);
