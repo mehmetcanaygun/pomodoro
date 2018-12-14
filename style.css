@@ -1,5 +1,92 @@
-#check-success-box {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahome, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+}
+
+#container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#input-box {
+  margin: 10px auto;
+}
+
+#goal-input {
+  width: 200px;
+  height: 2rem;
+  font-size: 1.2rem;
+  border: 2px solid #d7c12b;
+  background-color: #333;
+  color: #fff;
+}
+
+.styleBtn {
+  width: 65px;
+  height: 2.4rem;
+  font-size: 1rem;
+  border: 2px solid #333;
+  background-color: #d7c12b;
+  color: #000;
+  text-align: center;
+}
+
+#timer-box {
+  width: 268px;
+  height: 180px;
+  border: 3px solid #d7c12b;
+  background-color: #e6dfa5;
+  margin: 10px auto;
+  font-size: 5rem;
+  color: #000;
+  padding-top: 45px;
+}
+
+.button-box-btns {
+  width: 80px;
+  height: 2.4rem;
+  font-size: 1.2rem;
+  border: 2px solid #333;
+  background-color: #d7c12b;
+  color: #000;
+}
+
+#goal-list-box {
   display: none;
+  width: 268px;
+  margin: 10px auto;
+  border: 3px solid #d7c12b;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.successful {
+  color: #2bb85f;
+}
+
+.unsuccessful {
+  color: #e33939;
+}
+
+#success-rate {
+  font-size: 1rem;
+  font-style: normal;
+  text-align: center;
+}
+
+#check-success-box {
+  width: 265px;
+  margin: 10px auto;
+  border: 3px solid #d7c12b;
+  background-color: #333;
+  color: #fff;
+  display: none;
+  padding-bottom: 10px;
 }
 
 #button-box {
