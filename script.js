@@ -21,8 +21,8 @@ var isPaused = false;
 var isMinsTwoDigits = true;
 var isSecsTwoDigits = true;
 //Timer variables
-var minutes = 01;
-var seconds = 10;
+var minutes = 25;
+var seconds = 00;
 var saveGoalBtn = document.getElementById('save-goal-btn').onclick = function() {
   if(goalInput.value == "") {
     alert("Enter a goal!");
@@ -128,8 +128,8 @@ function reset() {
   inputBox.style.display = "block";
   currentGoal = "";
   currentListItem = "";
-  minutes = 01;
-  seconds = 10;
+  minutes = 25;
+  seconds = 00;
   successRate = ((successfulPom/(successfulPom+unsuccessfulPom))*100).toFixed(2);
   successRateLine.innerHTML = successRate + "%";
   clearInterval(countdown);
