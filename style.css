@@ -5,90 +5,154 @@ body {
   background-color: #fff;
 }
 
+.centered {
+  margin: 10px auto;
+}
+
 #container {
-  margin: 0 auto;
+  width: 600px;
+}
+
+#title {
   text-align: center;
 }
 
 #input-box {
-  margin: 10px auto;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #goal-input {
-  width: 200px;
-  height: 2rem;
-  font-size: 1.2rem;
-  border: 2px solid #d7c12b;
-  background-color: #333;
+  width: 60%;
+  font-size: 1rem;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #fff;
   color: #fff;
+  transition: 0.3s;
 }
 
-.styleBtn {
-  width: 65px;
-  height: 2.4rem;
-  font-size: 1rem;
-  border: 2px solid #333;
-  background-color: #d7c12b;
-  color: #000;
-  text-align: center;
+#goal-input:focus {
+  background-color: #000;
+  border-top-color: #fff;
+  border-right-color: #fff;
+  border-bottom-color: #be2e2e;
+  border-left-color: #fff;
+  transition: 0.3s;
+  outline: none;
 }
 
 #timer-box {
-  width: 268px;
-  height: 180px;
-  border: 3px solid #d7c12b;
-  background-color: #e6dfa5;
-  margin: 10px auto;
-  font-size: 5rem;
-  color: #000;
-  padding-top: 45px;
-}
-
-.button-box-btns {
-  width: 80px;
-  height: 2.4rem;
-  font-size: 1.2rem;
-  border: 2px solid #333;
-  background-color: #d7c12b;
-  color: #000;
-}
-
-#goal-list-box {
-  display: none;
-  width: 268px;
-  margin: 10px auto;
-  border: 3px solid #d7c12b;
-  background-color: #333;
-  color: #fff;
-  text-align: left;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.successful {
-  color: #2bb85f;
-}
-
-.unsuccessful {
-  color: #e33939;
-}
-
-#success-rate {
-  font-size: 1rem;
-  font-style: normal;
+  width: 400px;
+  height: 400px;
+  border: 10px solid #000;
+  border-radius: 50%;
+  background-color: #fff;
   text-align: center;
+  font-size: 7rem;
+  transition: 0.3s;
 }
 
-#check-success-box {
-  width: 265px;
-  margin: 10px auto;
-  border: 3px solid #d7c12b;
-  background-color: #333;
-  color: #fff;
-  display: none;
-  padding-bottom: 10px;
+#timer-box:hover {
+  border-top-color: #3986c6;
+  border-right-color: #52c236;
+  border-bottom-color: #be2e2e;
+  border-left-color: #e3c547;
+  transition: 0.3s;
 }
 
 #button-box {
   display: none;
+  width: 80%;
+  text-align: center;
+}
+
+#start-btn {
+
+}
+
+#pause-btn {
+}
+
+#restart-btn {
+
+}
+
+.styleBtn {
+  width: 30%;
+  font-size: 1rem;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+  transition: 0.3s;
+}
+
+.styleBtn:hover {
+  border-top-color: #fff;
+  border-right-color: #fff;
+  border-bottom-color: #be2e2e;
+  border-left-color: #fff;
+  background-color: #000;
+  color: #fff;
+  transition: 0.3s;
+}
+
+#check-success-box {
+  display: none;
+  width: 80%;
+  text-align: center;
+}
+
+#goal-list-box {
+  display: none;
+  width: 80%;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+.successful {
+  color: green;
+  font-weight: bold;
+}
+
+.unsuccessful {
+  font-weight: bold;
+  color: red;
+}
+
+#success-rate {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #container {
+    width: 100%;
+  }
+
+  #input-box {
+    width: 80%;
+  }
+
+  #timer-box {
+    width: 200px;
+    height: 200px;
+    font-size: 3rem;
+  }
+
+  #timer {
+    margin-top: 65px;
+  }
+
+  #check-success-box {
+    width: 100%;
+  }
+
+  #goal-list-box {
+    width: 100%;
+  }
+
 }

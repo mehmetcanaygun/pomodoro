@@ -4,7 +4,11 @@ var currentGoal;
 var inputBox = document.getElementById('input-box');
 var goalInput = document.getElementById('goal-input');
 var timerBox = document.getElementById('timer-box');
+var timer = document.getElementById('timer');
 var buttonBox = document.getElementById('button-box');
+var startBtn = document.getElementById('start-btn');
+var pauseBtn = document.getElementById('pause-btn');
+var restartBtn = document.getElementById('restart-btn');
 var goalListBox = document.getElementById('goal-list-box');
 var goalList = document.getElementById('goal-list');
 var question = document.getElementById('question');
@@ -23,6 +27,10 @@ var isSecsTwoDigits = true;
 //Timer variables
 var minutes = 25;
 var seconds = 00;
+
+var alertSound = new Audio('alert.mp3');
+
+
 var saveGoalBtn = document.getElementById('save-goal-btn').onclick = function() {
   if(goalInput.value == "") {
     alert("Enter a goal!");
@@ -30,12 +38,16 @@ var saveGoalBtn = document.getElementById('save-goal-btn').onclick = function() 
     currentGoal = goalInput.value;
     inputBox.style.display = "none";
     buttonBox.style.display = "block";
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
   }
 }
 
-var startBtn = document.getElementById('start-btn').onclick = function() {
+startBtn.onclick = function() {
   isPaused = false;
-  countdown = setInterval(startCountdown, 100);
+  countdown = setInterval(startCountdown, 1000);
+  startBtn.disabled = true;
+  pauseBtn.disabled = false;
 }
 
 function startCountdown() {
@@ -63,19 +75,21 @@ function startCountdown() {
     if(!isSecsTwoDigits) {
       newSecs = "0" + seconds;
     }
-    timerBox.innerHTML = newMins + " : " + newSecs;
+    timer.innerHTML = newMins + " : " + newSecs;
     //console.log(minutes + " : " + seconds);
   }
 }
 
-var pauseBtn = document.getElementById('pause-btn').onclick = function() {
+pauseBtn.onclick = function() {
   if(isPaused == false) {
     isPaused = true;
     clearInterval(countdown);
   }
+  startBtn.disabled = false;
+  pauseBtn.disabled = true;
 }
 
-var restartBtn = document.getElementById('restart-btn').onclick = function() {
+restartBtn.onclick = function() {
   reset();
   goalList.innerHTML = "";
   goalListData = "";
@@ -85,11 +99,12 @@ var restartBtn = document.getElementById('restart-btn').onclick = function() {
   successRateLine.innerHTML = "";
   buttonBox.style.display = "none";
   goalListBox.style.display = "none";
-  timerBox.innerHTML = "";
+  timer.innerHTML = "";
 }
 
 function endPomodoro() {
   // 1 Pomodoro over, ask if it was successful or not
+  alertSound.play();
   buttonBox.style.display = "none";
   checkSuccessBox.style.display = "block";
   question.innerHTML = "Did you reach your goal?<br>" +
@@ -104,6 +119,7 @@ var yesBtn = document.getElementById('yes-btn').onclick = function() {
   checkSuccessBox.style.display = "none";
   successfulPom++;
   goalListBox.style.display = "block";
+  alertSound.pause();
   reset();
 }
 
@@ -115,6 +131,7 @@ var noBtn = document.getElementById('no-btn').onclick = function() {
   checkSuccessBox.style.display = "none";
   unsuccessfulPom++;
   goalListBox.style.display = "block";
+  alertSound.pause();
   reset();
 }
 
@@ -123,7 +140,7 @@ function reset() {
   newSecs = "";
   isMinsTwoDigits = true;
   isSecsTwoDigits = true;
-  timerBox.innerHTML = "";
+  timer.innerHTML = "";
   goalInput.value = "";
   inputBox.style.display = "block";
   currentGoal = "";

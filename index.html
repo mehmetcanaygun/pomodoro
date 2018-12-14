@@ -5,30 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pomodoro</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
 
-  <div id="container">
-    <h1><em>Pomodoro</em></h1>
-    <div id="input-box">
-      <input id="goal-input" type="text" placeholder="Enter your goal">
+  <div id="container" class="centered">
+    <h1 id="title">Pomodoro</h1>
+    <div id="input-box" class="centered">
+      <input id="goal-input" type="text" placeholder="Enter your goal for this pomodoro">
       <input id="save-goal-btn" class="styleBtn" type="button" value="Save">
     </div>
-    <div id="check-success-box">
+    <div id="check-success-box" class="centered">
       <h2 id="question">Did you reach your goal?</h2>
       <input id="yes-btn" class="styleBtn" type="button" value="Yes">
       <input id="no-btn" class="styleBtn" type="button" value="No">
     </div>
-    <div id="timer-box">
-
+    <div id="timer-box" class="centered">
+      <p id="timer"></p>
     </div>
-    <div id="button-box">
+    <div id="button-box" class="centered">
       <input id="start-btn" class="styleBtn" type="button" value="Start">
       <input id="pause-btn" class="styleBtn" type="button" value="Pause">
       <input id="restart-btn" class="styleBtn" type="button" value="Restart">
     </div>
-    <div id="goal-list-box">
+    <div id="goal-list-box" class="centered">
       <ol id="goal-list">
 
       </ol>
@@ -36,6 +38,7 @@
     </div>
   </div>
 
-  <script src="script.js" charset="utf-8"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>
